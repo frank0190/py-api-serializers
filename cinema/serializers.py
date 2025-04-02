@@ -24,8 +24,6 @@ class MovieSerializer(serializers.ModelSerializer):
 
 class MovieListSerializer(MovieSerializer):
     actors = serializers.StringRelatedField(many=True)
-    # actors = serializers.SlugRelatedField(
-    #     slug_field="__str__", queryset=Actor.objects.all(), many=True)
     genres = serializers.SlugRelatedField(
         many=True,
         read_only=True,
